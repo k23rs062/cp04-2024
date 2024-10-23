@@ -201,8 +201,8 @@
         //alarm();
         active = false;
         period = 60 * parseInt($("#minute").val()) + parseInt($("#second").val());
-        $("#time").html("経過時間：0");
-        $("#remain").html("残り時間：" + period);
+        $("#time").html("経過時間：0秒");
+        $("#remain").html("残り時間：" + period + "秒( :  )");
 
         $("#btnA").prop("disabled", false);
         $("#btnB").prop("disabled", true);
