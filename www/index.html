@@ -217,10 +217,20 @@
             rest = period - etime;
             var m = parseInt(rest/60);
             var s = parseInt(rest - m*60);
-            $("#time").html("経過時間：" + etime);
+            $("#time").html("経過時間：" + etime + "秒");
             $("#remain").html("残り時間：" + rest + "秒(" + m + ":" + s + ")");
+            var mstr = "分：";
+            for(var i = 0; i < m; i++){
+                mstr += "★";
+                $("#minuteStr").html(mstr);
+            }
+            var sstr = "秒：";
+            for(var e = 0; e < s; e++){
+                sstr += "〇";
+                $("#secondStr").html(sstr);
+            }
             analog(rest);
-            if(rest <= 0){
+            if(rest <= 0 && etime > 0){
                 active = false;
                 alarm();
             }
